@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>맛집 추천</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@348&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- 네비게이션 영역 시작 -->
+    <nav class="navbar navbar-expand-md custom-nav navbar-dark fixed-top">
+        <div class="container">
+            <a class="montserrat navbar-brand" href="index.html#home">
+                <img src="photo/로고_바갈글흰.png" alt="로고" width="30" height="30">
+                BOMUN PLACE</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
+                aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav-menu">
+                <ul class="navbar-nav ms-auto my-2">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#introduce">소개</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" id="recommendDropdown" role="button" 
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                            추천
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="recommendDropdown">
+                            <li><a class="dropdown-item" href="restaurant.html"><i class="bi bi-fork-knife"></i> 맛집 추천</a></li>
+                            <li><a class="dropdown-item" href="place.html"><i class="bi bi-shop"></i> 장소 추천</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="1daycorse.html">1일 탐방 코스</a></li>
+                    <li class="nav-item"><a class="nav-link" href="community.html">커뮤니티</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 네비게이션 영역 끝 -->
+
+
+    <!-- 맛집 추천 제목 -->
+    <section id="introduce" class="container intro-section-2">
+        <div class="text-center py-5">
+            <h2 class="fw-bold">맛집 추천</h2>
+            <p class="lead text-muted">현지인이 선정한 보문동 맛집</p>
+        </div>
+
+
+
+        <!-- 카테고리 버튼 -->
+        <div class="text-center mb-5">
+            <button class="btn btn-category active" data-category="korean">한식</button>
+            <button class="btn btn-category" data-category="chinese">중식</button>
+            <button class="btn btn-category" data-category="cafe">카페</button>
+        </div>
+
+        <!-- 맛집 카드 영역 -->
+        <div id="restaurantCards" class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+          <!-- 카드는 JavaScript로 동적 생성 -->
+        </div>
+    </section>
+
+
+    <script>
+      // 맛집 데이터
+      const restaurants = {
+        korean: [
+          {
+            title: "상암순대국",
+            description: "해장하기 좋은 순대국과 콩나물국밥이 일품! <br> 추운날 따뜻하게 한그릇 어떤가요?",
+            image: "photo/상암순대국.jpg",
+            location: "서울특별시 성북구 보문동2가 100번지",
+            menu: "순대국밥, 콩나물 국밥"
+          },
+          {
+            title: "곰돌이 돈까스",
+            description: "신설동 맛집이 이사왔다! <br> 깔끔한 돈까스로 동네에서 소문난 맛집",
+            image: "photo/곰돌이돈까스.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu:"그냥 돈까스, 치즈 돈까스"
+          },
+          {
+            title: "엽기꼼닭발",
+            description: "남녀노소 즐겨찾는 닭발 <br> 매콤한 맛을 찾는다면 가보기",
+            image: "photo/엽기꼼닭발.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu:"뼈없는 닭발, 국물 닭발"
+          },
+          {
+            title: "금산닭집",
+            description: "옛날 통닭의 정석! <br> 감자도 튀겨주는 소문난 동네 치킨집",
+            image: "photo/금산닭집.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu:"후라이드 치킨"
+          },
+          {
+            title: "보문동치킨",
+            description: "후라이드 치킨의 정석! <br> 10분내로 갓 튀겨서 따끈따끈한 치킨을 먹고 싶다면 추천",
+            image: "photo/보문동치킨.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu: "후라이드 치킨, 닭똥집 튀김"
+          },
+          {
+            title: "푸른농장정육식당",
+            description: "항상 사람 많은 고깃집! <br> 계란찜과 된장찌개가 무한리필",
+            image: "photo/푸른농장.jpg",
+            location: "서울특별시 성북구 삼선동",
+            menu: "돼지 한 마리, 후식 냉면"
+          }
+        ],
+        chinese: [
+          {
+            title: "안동반점",
+            description: "줄서서 기다리는 소문난 맛집! <br> 옛날 스타일의 중국집",
+            image: "photo/안동반점.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu:"잡채밥, 짬뽕, 고기튀김"
+          },
+          {
+            title: "가부 보문점",
+            description: "깔끔한 맛의 중식당을 찾는다면 여기로! <br> 안동반점과는 다른 느낌의 중식장",
+            image: "photo/가부.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu:"차돌짬뽕, 사천 탕수육, 유린 탕수육"
+          },
+          {
+            title: "공푸",
+            description: "동네 주민만 아는 맛집이었는데 어느새! <br> 차돌짬뽕으로 문전성시를 이루는 맛집",
+            image: "photo/공푸.jpg",
+            location: "서울특별시 성북구 삼선동",
+            menu:"차돌짬뽕"
+          }
+        ],
+        cafe: [
+          {
+            title: "마가밀",
+            description: "'마감일'에서 유래한 카페이름에 맞춰 <br> 커피향기와 함께 공간을 즐기고 싶다면 추천! <br> 매일 달라지는 핸드드립 라인업과 맛있는 디저트",
+            image: "photo/마가밀.jpg",
+            location: "서울특별시 성북구 안암동",
+            menu:"온기가 느껴지는 불켜진 집 <br> (크리스마스 기간한정), 말차라떼"
+          },
+          {
+            title: "르쿠에르",
+            description: "고급지고 독특한 조각케익을 맛보고 싶다면 추천",
+            image: "photo/르쿠에르.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu:"생토노레, 파블로바 에뗴"
+          },
+          {
+            title: "언더워터",
+            description: "2층에서 즐기는 성북천 뷰와 커피를 즐길 수 있는 곳",
+            image: "photo/언더워터.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu:"시그니처 커피"
+          },
+          {
+            title: "공유 KYOUYUU",
+            description: "비행기 탈 필요 없이 J-POP 감성을 즐길 수 있는 곳",
+            image: "photo/공유.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu:"메론빵, 핸드드립 커피"
+          }
+        ]
+      };
+
+      // 카드 생성 함수
+      function createCards(category) {
+        const container = document.getElementById('restaurantCards');
+        const items = restaurants[category];
+        
+        container.innerHTML = items.map(item => `
+          <div class="col">
+            <div class="card h-100">
+              <img src="${item.image}" class="card-img-top" alt="${item.title}" style="height: 300px; object-fit: cover;">
+              <div class="card-body">
+                <h5 class="card-title">${item.title}</h5>
+                <p class="card-text">${item.description}</p>
+              </div>
+              <div class="card-overlay">
+                <div style="text-align: center;">
+                    <p style="color: white; font-size: 18px; margin-bottom: 15px;">
+                        추천 메뉴 : ${item.menu}
+                    </p>
+                <button class="map-btn" onclick="openMap('${item.title}', '${item.location}')">
+                  <i class="bi bi-geo-alt-fill"></i> 지도에서 보기
+                </button>
+              </div>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 구글 지도 열기
+      function openMap(name, location) {
+        const query = encodeURIComponent(name + ' ' + location);
+        window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+      }
+
+      // 버튼 클릭 이벤트
+      document.querySelectorAll('.btn-category').forEach(button => {
+        button.addEventListener('click', function() {
+          // 모든 버튼의 active 클래스 제거
+          document.querySelectorAll('.btn-category').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          
+          // 클릭된 버튼에 active 클래스 추가
+          this.classList.add('active');
+          
+          // 해당 카테고리 카드 표시
+          const category = this.getAttribute('data-category');
+          createCards(category);
+        });
+      });
+
+      
+        // URL 파라미터 확인하여 카테고리 자동 선택
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('category');
+
+        if (categoryParam) {
+        // URL에 카테고리가 있으면 해당 카테고리 표시
+        createCards(categoryParam);
+        // 해당 카테고리 버튼 활성화
+        document.querySelectorAll('.btn-category').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-category') === categoryParam) {
+            btn.classList.add('active');
+            }
+        });
+        } else {
+        // URL에 카테고리가 없으면 기본값(한식) 표시
+        createCards('korean');
+        }
+
+
+
+      </script>
+
+      <!-- 푸터 시작 -->
+      <footer>
+      <div class="container text-center">
+          <div class="pt-4 pb-3">
+              <a class="px-3"><i class="bi bi-facebook fs-4 text-black"></i></a>
+              <a class="px-3"><i class="bi bi-instagram fs-4 text-black"></i></a>
+              <a class="px-3"><i class="bi bi-twitter fs-4 text-black"></i></i></a>
+          </div>
+
+          <div>
+              <a class="pe-1"><i class="bi bi-telephone-fill text-black"></i></a>
+              <p class="d-inline-block m-0">010-0000-0000</p>
+
+              <p class="d-inline-block px-3 m-0">·</p>
+
+              <a class="pe-1"><i class="bi bi-envelope-at-fill text-black"></i></a>
+              <p class="d-inline-block m-0">seohyeon24ds@swu.ac.kr</p>
+          </div>
+          
+          <p class="mt-1 mb-4 text-black-50">Copyright <i class="bi bi-c-circle"></i> 2025 Designed by Yun Seohyeon</p>
+      </div>
+      </footer>
+      <!-- 푸터 끝 -->
+
+      <!-- top 버튼 시작 -->
+      <button id="scrollTopbutton">
+          <div><i class="bi bi-chevron-compact-up fs-4"></i></div>
+      </button>
+
+      <script>
+          const scrollTopbutton = document.getElementById('scrollTopbutton');
+
+          window.addEventListener('scroll', function() {
+              if (window.pageYOffset > 400) {
+                  scrollTopbutton.classList.add('show');
+              } else {
+                  scrollTopbutton.classList.remove('show');
+              }
+          });
+
+          scrollTopbutton.addEventListener('click', function() {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+
+      </script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

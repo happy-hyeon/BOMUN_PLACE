@@ -1,0 +1,766 @@
+body {
+    font-family: 'noto-sans-kr', sans-serif;
+    background-color: #fff8e7;
+}
+
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-kr{
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 348;
+  font-style: normal;
+}
+footer {
+    margin-top: 80px;
+}
+
+/* 네비게이션 영역 */
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+}
+
+.custom-nav {
+    background-color: #7c6243;  /* 원하는 색상 코드 */
+}
+
+.nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    /* 기본적으로 투명한 밑줄 설정 (패딩 추가로 깔끔한 간격 확보) */
+    border-bottom: 3px solid transparent; 
+    padding-bottom: 5px; /* 드롭다운 토글 버튼과의 일관성을 위해 !important 추가 */
+    transition: color 0.3s, border-bottom 0.3s ease; /* 부드러운 전환 효과 */
+}
+.nav-link:hover {
+    color: #fff;
+    border-bottom: 3px solid white; /* 호버 시 흰색 밑줄 표시 */
+}
+
+/* 드롭다운 호버 효과 */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+/* 드롭다운 스타일 커스터마이징 */
+.dropdown-menu {
+    animation: fadeIn 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: auto;
+    width: fit-content;
+    padding: 5px;
+}
+
+.dropdown-item:hover {
+    background-color: #f4c996d7;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 500px;
+    background-color: #000;
+}
+
+.carousel-item img {
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+/* 캐러셀 캡션(텍스트) 스타일 */
+.carousel-caption {
+    bottom: 50%;
+    transform: translateY(50%);
+    z-index: 10;
+}
+
+.carousel-caption h1 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.carousel-caption p {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.carousel-caption .btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #cd9045d7;
+    color: white;
+    border: none;
+}
+
+.carousel-caption .btn:hover {
+    background-color: #aa7330d7;
+    border: none;
+}
+
+/* 화살표 버튼 스타일 */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.7;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* 인디케이터(하단 점) 스타일 */
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* 페이드 효과 */
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+
+/* 홈 사진첩 */
+/* 사진첩 섹션 */
+#gallery {
+    scroll-margin-top: 60px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    aspect-ratio: 4/3;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/*소개 부분*/
+.intro-section-1{
+    display: block;
+    scroll-margin-top: 60px;      /* 헤더 높이만큼 조절 */
+
+}
+
+/* 보문동 지도 섹션 */
+#map {
+    background-color: #7c6243;
+}
+
+.map-title {
+    color: #fff8e7;
+    margin-bottom: 80px;
+}
+
+.map-embed {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.map-link:hover {
+    background: #f4c996d7;
+    color: black;
+}
+
+/* 로그인 */       
+.button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+.btn-login {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+.btn-primary-custom {
+    background: #d4a574;
+    color: #333;
+}
+
+.btn-primary-custom:hover {
+    background: #e6b886;
+    transform: translateY(-2px);
+}
+
+.btn-secondary-custom{
+    background-color: #e0dfdf;
+    color: #333;
+}
+
+.btn-secondary-custom:hover {
+    background: #f7f4ed;
+    transform: translateY(-2px);
+}
+
+/* 찾아오는 방법 */
+.access-title {
+    color: #fff8e7;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.access-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    height: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.access-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.access-icon {
+    font-size: 3rem;
+    color: #7c6243;
+    margin-bottom: 15px;
+}
+
+.access-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #5a4a3a;
+    margin-bottom: 20px;
+}
+
+.access-detail {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* 지하철 스타일 */
+.subway-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+.line-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: white;
+}
+
+.line-6 .line-badge {
+    background: #CD7C2F;
+}
+
+.line-4 .line-badge {
+    background: #00A5DE;
+}
+
+.station-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.exit-info {
+    color: #888;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+/* 버스 스타일 */
+.bus-info {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+.bus-type {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: white;
+    margin-right: 10px;
+}
+
+.bus-type.blue {
+    background: #3D5AFE;
+}
+
+.bus-type.green {
+    background: #4CAF50;
+}
+
+
+.bus-numbers {
+    font-weight: 600;
+    color: #333;
+}
+
+.bus-stop-info {
+    margin-top: 15px;
+    padding: 10px;
+    background: #fff8e7;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #7c6243;
+}
+
+/* 자전거 스타일 */
+.bike-station-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bike-station-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.bike-station-list li:last-child {
+    border-bottom: none;
+}
+
+.bike-station-list li:before {
+    content: "📍 ";
+    margin-right: 5px;
+}
+
+/* 커뮤니티 */
+/*제목*/
+.intro-section-2{
+    margin-top: 80px;
+}
+
+/* 글쓰기 버튼 */
+.write-btn {
+    background: #D4A574;
+    color: #333;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.write-btn:hover {
+    background: #E6B886;
+}
+
+.btn-secondary {
+    background: #cc4343;
+    color: #fff9f9;
+    border: none;
+}
+.btn-secondary:hover {
+    background: #f45757;
+}
+
+/* 게시판 테이블 */
+.board-table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.board-table table {
+    margin-bottom: 0;
+}
+
+.board-table thead {
+    background: #7c6243;
+    color: white;
+}
+
+.board-table th {
+    padding: 15px;
+    font-weight: 600;
+    border: none;
+}
+
+.board-table td {
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.board-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.board-table tbody tr {
+    cursor: pointer;
+}
+
+.board-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.post-number {
+    color: #888;
+    font-weight: 500;
+}
+
+.post-title {
+    color: #333;
+    font-weight: 500;
+    text-align: left;
+}
+
+.post-title:hover {
+    color: #7c6243;
+}
+
+.has-image {
+    color: #D4A574;
+    margin-left: 5px;
+}
+
+.post-author {
+    color: #666;
+}
+
+.post-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.post-views {
+    color: #888;
+}
+
+/* 페이지네이션 */
+.pagination {
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.page-link {
+    color: #7c6243;
+    border-color: #e0e0e0;
+    box-shadow: none;
+}
+
+.page-link:hover {
+    background: #D4A574;
+    color: white;
+    border-color: #D4A574;
+}
+
+.page-item.active .page-link {
+    background: #7c6243;
+    border-color: #7c6243;
+}
+
+.page-link:focus {
+    box-shadow: none;
+    color: #7c6243;
+}
+
+/* 활성화된 페이지 항목(.active)이 포커스를 받았을 때의 스타일 */
+.page-item.active .page-link:focus {
+    color: white !important;
+}
+
+/* 글쓰기 모달 */
+.modal-header {
+    background: #7c6243;
+    color: white;
+}
+
+.form-control:focus {
+    border-color: #D4A574;
+    box-shadow: 0 0 0 0.2rem rgba(212, 165, 116, 0.25);
+}
+
+.btn-post {
+    background: #D4A574;
+    color: #333;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-post:hover {
+    background: #E6B886;
+    color: #333;
+}
+
+.image-preview {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/*1일탐방 속 버튼 색상*/
+.btn-category:hover, .btn-category.active { 
+    background-color: #f4c996d7; 
+    color: #555; 
+    border:none;
+}
+
+.gugi-font { font-weight: bold; }
+.card { position: relative; overflow: hidden; }
+.card-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+.card:hover .card-overlay { opacity: 1; }
+.map-btn { padding: 12px 30px; background: white; color: #333; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; }
+.map-btn:hover { background: #f0f0f0; }
+
+/*top 버튼*/
+#scrollTopbutton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #cd9045d7;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#scrollTopbutton.show {
+    display: flex;
+}
+
+.course-section, .course-section-2 {
+    padding: 50px 0;
+}
+
+/* 가족 코스 배경 */
+.course-section-2 {
+    background-color: #f4c996d7;
+    scroll-margin-top: 60px;
+}
+
+/* 왼쪽 소개 카드 */
+.course-intro-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 100px;
+}
+
+.course-title {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #057117;
+    padding-bottom: 10px;
+}
+
+.course-description {
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.course-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.course-info p { margin-bottom: 8px; color: #333; }
+.course-info strong { color: #2c3e50; }
+
+
+.course-timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 60px;
+}
+
+.course-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    height: 4px;
+    background: #057117;
+}
+
+.timeline-item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: -44px;
+    width: 12px;
+    height: 12px;
+    background: #057117;
+    border-radius: 50%;
+}
+
+.timeline-title-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #057117;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.timeline-title-btn:hover { text-decoration: underline; }
+
+.timeline-detail {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.timeline-detail p { margin: 0; }
+
+
+
+.course-section-2 .course-title {
+    border-bottom-color: #5a4633;
+}
+
+.course-section-2 .course-timeline::before {
+    background: #5a4633;
+}
+
+.course-section-2 .timeline-marker {
+    background: #5a4633;
+}
+
+.course-section-2 .timeline-title-btn {
+    color: #5a4633;
+}
+
+@media (max-width: 768px) {
+    .course-intro-card {
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+    }
+
+    .course-timeline {
+        flex-direction: column;
+        padding-left: 40px;
+        padding-top: 0;
+        gap: 40px;
+    }
+
+    .course-timeline::before {
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        height: auto;
+    }
+
+    .timeline-item { align-items: flex-start; }
+
+    .timeline-marker {
+        left: -33px;
+        top: 0;
+    }
+}
+
+
+
+/* 카테고리 버튼 스타일-모든 페이지 적용 */
+.btn-category { 
+    background: white; 
+    border: 2px solid #ddd; 
+    color: #555; 
+    padding: 10px 30px;
+     margin: 0 10px; 
+     border-radius: 25px; 
+     font-weight: bold; 
+     transition: all 0.3s; 
+}

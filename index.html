@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>보문동 가이드</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- sns 링크 연결-부트스트랩 아이콘 적용 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@348&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- 네비게이션 영역 시작 -->
+    <nav class="navbar navbar-expand-md custom-nav navbar-dark fixed-top">
+        <div class="container">
+            <a class="montserrat navbar-brand" href="index.html#home">
+                <img src="photo/로고_바갈글흰.png" alt="로고" width="30" height="30">
+                BOMUN PLACE</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
+                aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav-menu">
+                <ul class="navbar-nav ms-auto my-2">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#introduce">소개</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" id="recommendDropdown" role="button" 
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                            추천
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="recommendDropdown">
+                            <li><a class="dropdown-item" href="restaurant.html"><i class="bi bi-fork-knife"></i> 맛집 추천</a></li>
+                            <li><a class="dropdown-item" href="place.html"><i class="bi bi-shop"></i> 장소 추천</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="1daycorse.html">1일 탐방 코스</a></li>
+                    <li class="nav-item"><a class="nav-link" href="community.html">커뮤니티</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 네비게이션 영역 끝 -->
+
+
+    <!-- Home 섹션 시작 -->
+    <section id="home">
+        <div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            
+            <!-- 인디케이터 (하단 점) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- 슬라이드 이미지들 -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="photo/풍경3.jpg" class="d-block w-100" alt="보문동 풍경 1">
+                    <div class="carousel-caption">
+                        <h1 class="display-4 fw-bold">보문동 가이드에 오신 것을 환영합니다</h1>
+                        <p class="lead">서울의 숨은 보석, 보문동을 탐험해보세요</p>
+                        <a href="#introduce" class="btn btn-primary btn-lg">더 알아보기</a>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="photo/여름2.jpg" class="d-block w-100" alt="보문동 풍경 2">
+                    <div class="carousel-caption">
+                        <h1 class="display-4 fw-bold">맛있는 식당이 가득한 곳</h1>
+                        <p class="lead">보문동 현지인의 특별한 맛집 추천 가이드를 확인해보세요</p>
+                        <a href="restaurant.html" class="btn btn-primary btn-lg">맛집 보러가기</a>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="photo/여름3.jpg" class="d-block w-100" alt="보문동 풍경 3">
+                    <div class="carousel-caption">
+                        <h1 class="display-4 fw-bold">특별한 장소들</h1>
+                        <p class="lead">역사와 문화가 살아있는 보문동</p>
+                        <a href="place.html" class="btn btn-primary btn-lg">장소 보러가기</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 이전/다음 버튼 -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">이전</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">다음</span>
+            </button>
+        </div>
+    </section>
+    <!-- Home 섹션 끝 -->
+
+
+    
+    <!-- 보문동 소개 섹션 시작 -->
+    <section id="introduce" class="container py-5 intro-section-1">
+        <div class="text-center py-5">
+            <h2 class="fw-bold">보문동 소개</h2>
+            <p class="lead text-muted">자연과 쉼이 있는 동네</p>
+        </div>
+
+        <div class="row justify-content-center align-items-center mb-5">
+            <div class="col-md-5">
+                <img src="photo/성북구 지도.jpg" alt="성북구 지도" class="img-fluid">
+            </div>
+            <div class="col-md-7 col-lg-5 px-lg-5">
+                <h4 class="mb-3">명칭 유래와 지리</h4>
+                <p class="lh-lg">서울 성북구 보문동은 천년 사찰 보문사(普門寺)에서 따온 지명이다. 
+                    덕을 갖춘 것을 ‘보(普)’라 하고, 쓰임이 나타나는 곳을 ‘문(門)’이라 하니, 보문이란 곧 보살이 
+                    일체의 성덕을 모두 갖춘 상태에서 기회・시기를 따라 그 묘용을 보임을 말하는 것이다.</p>
+                <p class="lh-lg">성북구의 남단에 위치하여 북쪽은 삼선동・안암동, 서쪽은 삼선동과 인접하고, 동쪽으로는 안암동, 남쪽으로는 종로구 숭인동・동대문구 신설동과 인접하고 있다.</p>
+            </div>
+        </div>
+    </section>
+    <!-- 보문동 소개 섹션 끝 -->
+
+    <!-- 보문동 사진첩 섹션 시작 -->
+    <section id="gallery" class="container py-5">
+        <div class="text-center py-5">
+            <h2 class="fw-bold">보문동 사진첩</h2>
+            <p class="lead text-muted">사계절의 아름다운 보문동을 만나보세요</p>
+        </div>
+
+        <!-- 사진 그리드 -->
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="photo/풍경1.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/풍경2.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/풍경4.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/풍경5.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/여름1.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/봄1.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/봄2.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/겨울1.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/겨울2.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/풍경3.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/여름3.jpg">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/여름2.jpg">
+            </div>
+        </div>
+    </section>
+    <!-- 보문동 사진첩 섹션 끝 -->
+
+
+    <!-- 모달 (라이트박스) -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <button class="modal-nav-btn modal-prev" onclick="changeImage(-1)">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <img id="modalImage" src="" alt="">
+                    <button class="modal-nav-btn modal-next" onclick="changeImage(1)">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                    <div class="image-caption" id="imageCaption"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 보문동 지도 시작 -->
+    <section id="map">
+        <div class="container py-5">
+            <h2 class="fw-bold map-title text-center">위치 보기</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10 mb-5">
+                        <!-- 실제 구글 지도 임베드 -->
+                    <iframe 
+                        class="map-embed"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12647.583955372938!2d127.01850007678046!3d37.58795792236084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cba6c1e9d825b%3A0x4f9c4d1f7a7c5b8a!2z7ISc7Jq47Yq567OE6rWsIOyEseutuOq1rCDrs7TrrLjrj5k!5e0!3m2!1sko!2skr!4v1234567890123!5m2!1sko!2skr" 
+                        allowfullscreen="">
+                    </iframe>
+
+                    <div class="text-center">
+                        <a href="https://www.google.com/maps/place/서울특별시+성북구+보문동" target="_blank" class="map-link">
+                            <i class="bi bi-geo-alt-fill"></i> Google Maps에서 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+
+
+
+            <!-- 찾아오는 방법 -->
+            <div class="access-info mt-5">
+                <h3 class="access-title fw-bold">찾아오는 방법</h3>
+                
+                <div class="row g-3">
+                    <!-- 지하철 -->
+                    <div class="col-md-6">
+                        <div class="access-card">
+                            <div class="access-icon">
+                                <i class="bi bi-train-front-fill"></i>
+                            </div>
+                            <h4>지하철</h4>
+                            <div class="access-detail">
+                                <div class="subway-line line-6">
+                                    <span class="line-badge">6호선</span>
+                                    <span class="station-name">보문역</span>
+                                    <span class="exit-info">1번 출구 도보 5분</span>
+                                </div>
+                                <div class="subway-line line-6">
+                                    <span class="line-badge">6호선</span>
+                                    <span class="station-name">안암역</span>
+                                    <span class="exit-info">3번 출구 도보 7분</span>
+                                </div>
+                                <div class="subway-line line-4">
+                                    <span class="line-badge">4호선</span>
+                                    <span class="station-name">한성대입구역</span>
+                                    <span class="exit-info">6번 출구 도보 10분</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 버스 -->
+                    <div class="col-md-6">
+                        <div class="access-card">
+                            <div class="access-icon">
+                                <i class="bi bi-bus-front-fill"></i>
+                            </div>
+                            <h4>버스</h4>
+                            <div class="access-detail">
+                                <div class="bus-info">
+                                    <span class="bus-type blue">간선</span>
+                                    <span class="bus-numbers">103, 142, 152, 272, 273, N15</span>
+                                </div>
+                                <div class="bus-info">
+                                    <span class="bus-type green">지선</span>
+                                    <span class="bus-numbers">1014, 1111, 1112, 1162, 2115</span>
+                                </div>
+                                <p class="bus-stop-info">
+                                    <i class="bi bi-geo-alt"></i> 보문동 정류장 하차
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 자가용 -->
+                    <div class="col-md-6">
+                        <div class="access-card">
+                            <div class="access-icon">
+                                <i class="bi bi-car-front-fill"></i>
+                            </div>
+                            <h4>자가용</h4>
+                            <div class="access-detail">
+                                <p><strong>내비게이션 주소 :</strong><br>서울특별시 성북구 보문동</p>
+                                <p><strong>주차 :</strong><br>인근 공영주차장 이용 가능</p>
+                                <p class="text-muted small">※ 주말 및 공휴일 주차 혼잡 예상</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 자전거 -->
+                    <div class="col-md-6">
+                        <div class="access-card">
+                            <div class="access-icon">
+                                <i class="bi bi-bicycle"></i>
+                            </div>
+                            <h4>자전거 (따릉이)</h4>
+                            <div class="access-detail">
+                                <p><strong>가까운 따릉이 대여소 :</strong></p>
+                                <ul class="bike-station-list">
+                                    <li>보문역 1번 출구 앞 (도보 3분)</li>
+                                    <li>안암로 보문동 주민센터 (도보 5분)</li>
+                                    <li>보문공원 입구 (도보 7분)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- 보문동 지도 끝 -->
+
+
+    <!-- 푸터 시작 -->
+    <footer>
+    <div class="container text-center">
+        <div class="pt-4 pb-3">
+            <a class="px-3"><i class="bi bi-facebook fs-4 text-black"></i></a>
+            <a class="px-3"><i class="bi bi-instagram fs-4 text-black"></i></a>
+            <a class="px-3"><i class="bi bi-twitter fs-4 text-black"></i></i></a>
+        </div>
+
+        <div>
+            <a class="pe-1"><i class="bi bi-telephone-fill text-black"></i></a>
+            <p class="d-inline-block m-0">010-0000-0000</p>
+
+            <p class="d-inline-block px-3 m-0">·</p>
+
+            <a class="pe-1"><i class="bi bi-envelope-at-fill text-black"></i></a>
+            <p class="d-inline-block m-0">seohyeon24ds@swu.ac.kr</p>
+        </div>
+        
+        <p class="mt-1 mb-4 text-black-50">Copyright <i class="bi bi-c-circle"></i> 2025 Designed by Yun Seohyeon</p>
+    </div>
+    </footer>
+    <!-- 푸터 끝 -->
+
+
+
+    <!-- top 버튼 시작 -->
+    <button id="scrollTopbutton">
+        <div><i class="bi bi-chevron-compact-up fs-4"></i></div>
+    </button>
+
+    <script>
+        const scrollTopbutton = document.getElementById('scrollTopbutton');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 400) {
+                scrollTopbutton.classList.add('show');
+            } else {
+                scrollTopbutton.classList.remove('show');
+            }
+        });
+
+        scrollTopbutton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+    
+  
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

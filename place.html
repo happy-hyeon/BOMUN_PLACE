@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 추천</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@348&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- 네비게이션 영역 시작 -->
+    <nav class="navbar navbar-expand-md custom-nav navbar-dark fixed-top">
+        <div class="container">
+            <a class="montserrat navbar-brand" href="index.html#home">
+                <img src="photo/로고_바갈글흰.png" alt="로고" width="30" height="30">
+                BOMUN PLACE</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
+                aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav-menu">
+                <ul class="navbar-nav ms-auto my-2">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#introduce">소개</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" id="recommendDropdown" role="button" 
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                            추천
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="recommendDropdown">
+                            <li><a class="dropdown-item" href="restaurant.html"><i class="bi bi-fork-knife"></i> 맛집 추천</a></li>
+                            <li><a class="dropdown-item" href="place.html"><i class="bi bi-shop"></i> 장소 추천</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="1daycorse.html">1일 탐방 코스</a></li>
+                    <li class="nav-item"><a class="nav-link" href="community.html">커뮤니티</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 네비게이션 영역 끝 -->
+
+
+    <!-- 장소 추천 제목 -->
+    <section id="introduce" class="container intro-section-2">
+        <div class="text-center py-5">
+            <h2 class="fw-bold">장소 추천</h2>
+            <p class="lead text-muted">사계절 내내 보문동을 제대로 즐길 수 있는 곳</p>
+        </div>
+
+
+
+        <!-- 카테고리 버튼 -->
+        <div class="text-center mb-5">
+            <button class="btn btn-category active" data-category="lake">성북천</button>
+            <button class="btn btn-category" data-category="healing">힐링</button>
+
+         </div>
+
+        <!-- 장소 카드 영역 -->
+        <div id="placeCards" class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+          <!-- 카드는 JavaScript로 동적 생성 -->
+        </div>
+    </section>
+
+
+    <script>
+      // 장소 데이터
+      const place = {
+        lake: [
+          {
+            title: "성북천",
+            description: "도심 속 자연을 느낄 수 있는 산책로 <br> 봄에는 벚꽃, 가을에는 단풍이 아름다운 힐링 명소 <br> 가끔 만날 수 있는 오리가족을 따라가면 청계천으로 연결된다는 사실!",
+            image: "photo/성북천.jpg",
+            location: "서울특별시 성북구 동선동",
+            menu: "산책로, 운동시설, 벚꽃길"
+          },
+          {
+            title: "성북천 벚꽃길",
+            description: "봄이면 만개하는 벚꽃터널 <br> 4월 초 방문 필수! 사진 찍기 좋은 포토존",
+            image: "photo/성북천벚꽃.jpg",
+            location: "서울특별시 성북구 동선동",
+            menu: "벚꽃 구경, 산책"
+          },
+          {
+            title: "성북천 야경",
+            description: "밤에 더 아름다운 성북천 <br> 도심속 자연을 느끼며 밤 산책하기 좋은 산책로",
+            image: "photo/성북천야경.jpg",
+            location: "서울특별시 성북구 동선동",
+            menu: "야간 산책, 데이트 코스"
+          }
+        ],
+        healing: [
+          {
+            title: "보문숲길도서관",
+            description: "가장 최근에 생긴 도서관! <br> 아늑한 분위기의 힐링 공간",
+            image: "photo/보문숲길도서관.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu: "독서, 휴식, 카페"
+          },
+          {
+            title: "보문사",
+            description: "도심 속 천년의 사찰 <br> 고즈넉한 분위기에서 마음의 평화를 찾을 수 있는 곳",
+            image: "photo/보문사.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu: "템플스테이, 산책, 명상"
+          },
+          {
+            title: "낙산 성곽길",
+            description: "가벼운 등산으로 힐링하기 좋은 곳 <br> 보문동 뒷산의 아름다운 성곽길 <br> 야경이 더 매력적인 곳",
+            image: "photo/낙산.jpg",
+            location: "서울특별시 성북구 창신동",
+            menu: "등산, 산책, 운동"
+          },
+          {
+            title: "보문카페거리",
+            description: "성북천을 따라 감성 카페들이 모여있는 거리 <br> 데이트나 친구와의 만남 장소로 추천",
+            image: "photo/보문카페거리.jpg",
+            location: "서울특별시 성북구 보문동",
+            menu: "카페 투어, 디저트"
+          }
+        ]
+      };
+
+
+
+      // 카드 생성 함수
+      function createCards(category) {
+        const container = document.getElementById('placeCards');
+        const items = place[category];
+        
+        container.innerHTML = items.map(item => `
+          <div class="col">
+            <div class="card h-100">
+              <img src="${item.image}" class="card-img-top" alt="${item.title}" style="height: 300px; object-fit: cover;">
+              <div class="card-body">
+                <h5 class="card-title">${item.title}</h5>
+                <p class="card-text">${item.description}</p>
+              </div>
+              <div class="card-overlay">
+                <div style="text-align: center;">
+                    <p style="color: white; font-size: 18px; margin-bottom: 15px;">
+                      키워드 : ${item.menu}
+                    </p>
+                <button class="map-btn" onclick="openMap('${item.title}', '${item.location}')">
+                  <i class="bi bi-geo-alt-fill"></i> 지도에서 보기
+                </button>
+                ${item.title === '보문카페거리' ? `
+                  <br>
+                  <button class="map-btn" onclick="window.location.href='restaurant.html?category=cafe'" style="margin-top: 10px;">
+                    <i class="bi bi-cup-hot-fill"></i> 카페 맛집 보기
+                  </button>
+                ` : ''}
+              </div>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 구글 지도 열기
+      function openMap(name, location) {
+        const query = encodeURIComponent(name + ' ' + location);
+        window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+      }
+
+      // 버튼 클릭 이벤트
+      document.querySelectorAll('.btn-category').forEach(button => {
+        button.addEventListener('click', function() {
+          // 모든 버튼의 active 클래스 제거
+          document.querySelectorAll('.btn-category').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          
+          // 클릭된 버튼에 active 클래스 추가
+          this.classList.add('active');
+          
+          // 해당 카테고리 카드 표시
+          const category = this.getAttribute('data-category');
+          
+          // URL에 카테고리 저장
+          const url = new URL(window.location);
+          url.searchParams.set('category', category);
+          window.history.pushState({}, '', url);
+          
+          createCards(category);
+        });
+      });
+
+      // 페이지 로드 시 URL 파라미터 확인
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryParam = urlParams.get('category');
+
+      if (categoryParam && place[categoryParam]) {
+        // URL에 카테고리가 있으면 해당 카테고리 표시
+        createCards(categoryParam);
+        // 해당 카테고리 버튼 활성화
+        document.querySelectorAll('.btn-category').forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.getAttribute('data-category') === categoryParam) {
+            btn.classList.add('active');
+          }
+        });
+      } else {
+        // URL에 카테고리가 없으면 기본값(성북천) 표시
+        createCards('lake');
+      }
+      </script>
+
+      <!-- 푸터 시작 -->
+      <footer>
+      <div class="container text-center">
+          <div class="pt-4 pb-3">
+              <a class="px-3"><i class="bi bi-facebook fs-4 text-black"></i></a>
+              <a class="px-3"><i class="bi bi-instagram fs-4 text-black"></i></a>
+              <a class="px-3"><i class="bi bi-twitter fs-4 text-black"></i></i></a>
+          </div>
+
+          <div>
+              <a class="pe-1"><i class="bi bi-telephone-fill text-black"></i></a>
+              <p class="d-inline-block m-0">010-0000-0000</p>
+
+              <p class="d-inline-block px-3 m-0">·</p>
+
+              <a class="pe-1"><i class="bi bi-envelope-at-fill text-black"></i></a>
+              <p class="d-inline-block m-0">seohyeon24ds@swu.ac.kr</p>
+          </div>
+          
+          <p class="mt-1 mb-4 text-black-50">Copyright <i class="bi bi-c-circle"></i> 2025 Designed by Yun Seohyeon</p>
+      </div>
+      </footer>
+      <!-- 푸터 끝 -->
+
+      <!-- top 버튼 시작 -->
+      <button id="scrollTopbutton">
+          <div><i class="bi bi-chevron-compact-up fs-4"></i></div>
+      </button>
+
+      <script>
+          const scrollTopbutton = document.getElementById('scrollTopbutton');
+
+          window.addEventListener('scroll', function() {
+              if (window.pageYOffset > 400) {
+                  scrollTopbutton.classList.add('show');
+              } else {
+                  scrollTopbutton.classList.remove('show');
+              }
+          });
+
+          scrollTopbutton.addEventListener('click', function() {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+
+      </script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

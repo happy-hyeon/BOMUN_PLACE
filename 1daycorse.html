@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>보문동 1일 탐방 코스</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- sns 링크 연결-부트스트랩 아이콘 적용 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@348&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- 네비게이션 영역 시작 -->
+    <nav class="navbar navbar-expand-md custom-nav navbar-dark fixed-top">
+        <div class="container">
+            <a class="montserrat navbar-brand" href="index.html#home">
+                <img src="photo/로고_바갈글흰.png" alt="로고" width="30" height="30">
+                BOMUN PLACE</a>
+                
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
+                aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav-menu">
+                <ul class="navbar-nav ms-auto my-2">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#introduce">소개</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" id="recommendDropdown" role="button" 
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                            추천
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="recommendDropdown">
+                            <li><a class="dropdown-item" href="restaurant.html"><i class="bi bi-fork-knife"></i> 맛집 추천</a></li>
+                            <li><a class="dropdown-item" href="place.html"><i class="bi bi-shop"></i> 장소 추천</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="1daycorse.html">1일 탐방 코스</a></li>
+                    <li class="nav-item"><a class="nav-link" href="community.html">커뮤니티</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 네비게이션 영역 끝 -->
+
+    <!-- 장소 추천 제목 -->
+    <section id="1daycorse" class="container intro-section-2">
+        <div class="text-center py-5">
+            <h2 class="fw-bold">보문동 1일 탐방 코스</h2>
+            <p class="lead text-muted">보문동의 매력을 하루에 느낄 수 있는 특별한 코스</p>
+            <p class="small text-muted">TIP! 추천 코스를 클릭하여 자세한 정보 보기</p>
+        </div>
+
+        <!-- 카테고리 버튼 -->
+        <div class="text-center mb-5">
+            <button class="btn btn-category active" onclick="location.href='#date'"><i class="bi bi-heart-fill"></i> 데이트</button>
+            <button class="btn btn-category" onclick="location.href='#family'"><i class="bi bi-people-fill"></i> 가족나들이</button>
+            <button class="btn btn-category" onclick="location.href='#healing'"><i class="bi bi-leaf-fill"></i> 자연힐링</button>
+
+        </div>
+    </section>
+
+
+    <!-- 데이트 코스 -->
+    <section id="date" class="course-section">
+        <div class="container py-5">
+            <div class="row">
+                <!-- 왼쪽: 코스 소개 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="course-intro-card">
+                        <h3 class="course-title"><i class="bi bi-heart-fill"></i> 로맨틱 데이트 코스</h3>
+                        <p class="course-description">
+                            성북천의 아름다운 산책로와 함께하는 특별한 하루! 
+                            감성과 자연이 어우러진 보문동의 카페와 
+                            맛집을 즐기며 여유로운 시간을 보내보세요.
+                        </p>
+                        <div class="course-info">
+                            <p><strong>소요시간 |</strong> 약 6시간</p>
+                            <p><strong>추천시간 |</strong> 오후 2시 출발</p>
+                            <p><strong>난이도 |</strong> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽: 코스 타임라인 -->
+                <div class="col-md-8 col-lg-9">
+                    <div class="course-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#date2">
+                                보문사 <br> 14:00 - 15:30
+                            </button>
+
+                            <!-- 클릭하면 열리는 상세 설명 -->
+                            <div id="date2" class="collapse timeline-detail">
+                                <p>천년 사찰 보문사 방문. <br> 
+                                고즈넉한 사찰 분위기를 <br>느끼며 부처님께 소원빌어보기!</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#date1">
+                                성북천 산책로 <br> 15:45 - 16:30
+                            </button>
+
+                            <!-- 클릭하면 열리는 상세 설명 -->
+                            <div id="date1" class="collapse timeline-detail">
+                                <p>보문역에서 출발해 성북천을 따라 여유로운 산책.<br>
+                                봄에는 벚꽃, 가을에는 낙엽을 배경으로 사진 촬영 추천!</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#date3">
+                                마음에 드는 카페 <br> 17:00 - 18:30
+                            </button>
+
+                            <!-- 클릭하면 열리는 상세 설명 -->
+                            <div id="date3" class="collapse timeline-detail">
+                                <p>성북천을 되돌아오며 보문동 카페거리에서 마음에 드는 카페로 가기! </p><br>
+                                <p>*마가밀 추천</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#date4">
+                                저녁 및 야경 <br> 19:00 - 20:30
+                            </button>
+
+                            <!-- 클릭하면 열리는 상세 설명 -->
+                            <div id="date4" class="collapse timeline-detail">
+                                <p>보문동 맛집에서 저녁 식사 후 낙산 성곽길 야경 산책. <br> 맛집은 현지인 추천 페이지 참고하기!</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 가족나들이 코스 -->
+    <section id="family" class="course-section-2">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4 col-lg-3">
+                    <div class="course-intro-card">
+                        <h3 class="course-title"><i class="bi bi-people-fill"></i> 가족 나들이 코스</h3>
+                        <p class="course-description">
+                            아이들과 함께 즐거운 추억을 만들 수 있는 코스. 
+                            가족 모두 만족 가능한 맞춤형 일정.
+                        </p>
+                        <div class="course-info">
+                            <p><strong>소요시간 |</strong> 약 9시간</p>
+                            <p><strong>추천시간 |</strong> 오전 10시 출발</p>
+                            <p><strong>난이도 |</strong> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-lg-9">
+                    <div class="course-timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#family1">
+                                성북천 산책로 <br> 10:00 - 11:30
+                            </button>
+
+                            <!-- 상세 내용 -->
+                            <div id="family1" class="collapse timeline-detail">
+                                <p>아이들이 뛰어놀고 도심 속 자연을 즐기는 시간.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#family2">
+                                점심 식사 <br> 12:00 - 13:00
+                            </button>
+
+                            <!-- 상세 내용 -->
+                            <div id="family2" class="collapse timeline-detail">
+                                <p>가족 단위 맛집에서 <br>든든한 한 끼 식사! <br>(맛집 리스트 참고)</p><br>
+                                <p>*가부 보문점 추천</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#family3">
+                                성북천 자전거 라이딩 <br> 13:30 - 15:30
+                            </button>
+
+                            <!-- 상세 내용 -->
+                            <div id="family3" class="collapse timeline-detail">
+                                <p>서울시 공유형 자전거인 <br>따릉이를 대여해 <br>개천을 따라 즐기는 라이딩.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#family4">
+                                보문숲길도서관 및 저녁 <br> 16:00 - 19:00
+                            </button>
+
+                            <!-- 상세 내용 -->
+                            <div id="family4" class="collapse timeline-detail">
+                                <p>아이들 맞춤형 도서관에서 독서와 어른들은 차 한 잔의 여유 즐길 수 있는 공간.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 자연힐링 코스 -->
+    <section id="healing" class="course-section">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4 col-lg-3">
+                    <div class="course-intro-card">
+                        <h3 class="course-title"><i class="bi bi-leaf-fill"></i> 자연 힐링 코스</h3>
+                        <p class="course-description">
+                            일상의 스트레스에서 벗어나 자연 속에서 힐링하는 코스. 
+                            조용한 산책로와 명상의 시간으로 마음의 평화를 찾아보세요.
+                        </p>
+                        <div class="course-info">
+                            <p><strong>소요시간 |</strong> 약 5시간</p>
+                            <p><strong>추천시간 |</strong> 오전 9시 출발</p>
+                            <p><strong>난이도 |</strong> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-lg-9">
+                    <div class="course-timeline">
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#healing1">
+                                성북천 산책로 <br> 10:00 - 11:30
+                            </button>
+
+                            <!-- 상세 내용 -->
+                            <div id="healing1" class="collapse timeline-detail">
+                                <p>도심 속 자연을 느끼며<br> 감상하는 시간.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#healing2">
+                                점심 식사 및 카페<br> 12:00 - 14:00
+                            </button>
+
+                            <!-- 상세 내용 -->
+                            <div id="healing2" class="collapse timeline-detail">
+                                <p>든든하게 점심 식사 후<br> 마음에 드는 카페에서<br> 힐링까지!</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#healing3">
+                                보문사 <br> 14:30 - 15:30
+                            </button>
+
+                            <!-- 상세 내용 -->
+                            <div id="healing3" class="collapse timeline-detail">
+                                <p>조용한 사찰에서 일상의<br> 스트레스 해소하기.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+
+                            <!-- 장소 이름 버튼 -->
+                            <button class="timeline-title-btn" data-bs-toggle="collapse" data-bs-target="#healing4">
+                                낙산 공원 <br> 16:00 - 17:00
+                            </button>
+
+                            <!-- 상세 내용 -->
+                            <div id="healing4" class="collapse timeline-detail">
+                                <p>초반 오르막을 오르면 숲이 우거진 성곽길을 걸으며 <br>힐링.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 푸터 시작 -->
+    <footer>
+    <div class="container text-center">
+        <div class="pt-4 pb-3">
+            <a class="px-3"><i class="bi bi-facebook fs-4 text-black"></i></a>
+            <a class="px-3"><i class="bi bi-instagram fs-4 text-black"></i></a>
+            <a class="px-3"><i class="bi bi-twitter fs-4 text-black"></i></i></a>
+        </div>
+
+        <div>
+            <a class="pe-1"><i class="bi bi-telephone-fill text-black"></i></a>
+            <p class="d-inline-block m-0">010-0000-0000</p>
+
+            <p class="d-inline-block px-3 m-0">·</p>
+
+            <a class="pe-1"><i class="bi bi-envelope-at-fill text-black"></i></a>
+            <p class="d-inline-block m-0">seohyeon24ds@swu.ac.kr</p>
+        </div>
+        
+        <p class="mt-1 mb-4 text-black-50">Copyright <i class="bi bi-c-circle"></i> 2025 Designed by Yun Seohyeon</p>
+    </div>
+    </footer>
+    <!-- 푸터 끝 -->
+
+    <!-- top 버튼 시작 -->
+    <button id="scrollTopbutton">
+        <div><i class="bi bi-chevron-compact-up fs-4"></i></div>
+    </button>
+
+    <script>
+        const scrollTopbutton = document.getElementById('scrollTopbutton');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 400) {
+                scrollTopbutton.classList.add('show');
+            } else {
+                scrollTopbutton.classList.remove('show');
+            }
+        });
+
+        scrollTopbutton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+
+    
+
+    
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
