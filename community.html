@@ -195,7 +195,7 @@
     const postsData = {
         1: {
             content: "보문동은 조용하고 살기 좋으며 교통이 편리합니다. 특히 보문천을 따라 산책하는 것이 일상의 낙입니다. 아파트와 주택가가 적절히 섞여 있어 편리한 생활이 가능합니다.",
-            imageSrc: "photo/성북천.png"
+            imageSrc: "./photo/성북천.png"
         },
         2: {
             content: "안암역 근처에 있는 '파스타보노'라는 곳인데, 가격도 착하고 맛도 훌륭합니다. 특히 시금치 파스타가 일품이에요! 친구들과 모임하기에도 좋은 분위기입니다.",
@@ -203,7 +203,7 @@
         },
         3: {
             content: "가을 단풍이 절정이라 공원이 정말 예뻤습니다. 반려견과 함께 산책하기 좋은 곳이에요. 주변에 카페도 많아서 커피 한 잔 하며 쉬어가기 좋습니다.",
-            imageSrc: "photo/공유.JPG"
+            imageSrc: "./photo/공유.JPG"
         }
     };
 
@@ -211,13 +211,12 @@
         const detailModalElement = document.getElementById('detailModal');
         const postRows = document.querySelectorAll('#postList tr');
 
-        // 테이블의 각 행(<tr>)에 이벤트 리스너 연결
         postRows.forEach(row => {
             const titleCell = row.querySelector('.post-title');
             
             // 제목 셀 클릭 이벤트 처리
             if (titleCell) {
-                titleCell.style.cursor = 'pointer'; // 클릭 가능한 것처럼 보이게 설정
+                titleCell.style.cursor = 'pointer';
                 
                 titleCell.addEventListener('click', function() {
                     // 1. 테이블 행에서 데이터 추출
@@ -227,7 +226,7 @@
                     const date = row.querySelector('.post-date').textContent.trim();
                     let views = parseInt(row.querySelector('.post-views').textContent.trim());
 
-                    // 2. 상세 데이터 가져오기 (JS 객체에서)
+                    // 2. 상세 데이터 가져오기
                     const detail = postsData[postNumber];
                     if (!detail) {
                         console.error("게시글 상세 데이터를 찾을 수 없습니다.");
@@ -314,3 +313,4 @@
   </body>
 
 </html>
+
