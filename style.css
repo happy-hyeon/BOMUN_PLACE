@@ -752,6 +752,16 @@ footer {
 }
 
 
+/* 모바일 게시판 제목 말줄임 처리 */
+@media (max-width: 576px) {
+  .board-table .post-title {
+    max-width: 120px;
+    white-space: nowrap;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 
 /* 카테고리 버튼 스타일-모든 페이지 적용 */
 .btn-category { 
@@ -763,4 +773,5 @@ footer {
      border-radius: 25px; 
      font-weight: bold; 
      transition: all 0.3s; 
+
 }
